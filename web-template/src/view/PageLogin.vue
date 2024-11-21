@@ -18,10 +18,10 @@ const progress = new Progress(0);
 
 const pageLogin = new class extends Component {
     async login() {
-        if (accountInput.value.value === '' || passwordInput.value.value === '') {
-            showToast({ message: '账号或密码不能为空', duration: 1000 });
-            return;
-        }
+        // if (accountInput.value.value === '' || passwordInput.value.value === '') {
+        //     showToast({ message: '账号或密码不能为空', duration: 1000 });
+        //     return;
+        // }
         // 登录
         showLoading();
         await user.login();
