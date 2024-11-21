@@ -1,0 +1,34 @@
+<!-- v-console Support.(Optional) -->
+
+
+<!-- Polyfills bundle. -->
+<script src="/scripting/polyfills/bundle.js"></script>
+
+<!-- Import map that map the engine feature unit modules. -->
+<script src="/scripting/engine/bin/.cache/dev/preview/import-map.json" type="systemjs-importmap"></script>
+
+<!-- Import map that map the entry of project module(s). -->
+<script src="/scripting/x/import-map.json" type="systemjs-importmap"></script>
+
+<!-- Import map that map 'cc', 'cc/env'. -->
+<script src="/scripting/import-map-global" type="systemjs-importmap"></script>
+
+<!-- SystemJS support. -->
+<script src="/scripting/systemjs/system.js"></script>
+
+<!-- Setup the detailed resolution. -->
+<script>
+    System.setResolutionDetailMapCallback(function () {
+        var url = new URL('/scripting/x/resolution-detail-map.json', window.location);
+        return fetch(url).then(function (response) {
+            return response.json();
+        }).then(function (json) {
+            return { json, url: url.href };
+        });
+    });
+</script>
+
+<script src="/scripting/engine/bin/.cache/dev/preview/bundled/index.js"></script>
+
+<!-- Manifest file. -->
+<script name="setting" src="/settings.js?scene=5298bb0b-166e-4978-af98-0047d43757de"></script>

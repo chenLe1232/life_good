@@ -1,0 +1,61 @@
+.def-loading {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index: 100;
+}
+
+.def-loading-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+}
+
+.def-loading-rect {
+    background-color: #00ae9d;
+    width: 10px;
+    height: 40px;
+    margin-left: 1.5px;
+    margin-right: 1.5px;
+    animation: def-loading 1.2s infinite ease-in-out;
+}
+
+.def-loading-rect:nth-child(1) {
+    animation-delay: -1.2s;
+}
+
+.def-loading-rect:nth-child(2) {
+    animation-delay: -1.1s;
+}
+
+.def-loading-rect:nth-child(3) {
+    animation-delay: -1s;
+}
+
+.def-loading-rect:nth-child(4) {
+    animation-delay: -0.9s;
+}
+
+.def-loading-rect:nth-child(5) {
+    animation-delay: -0.8s;
+}
+
+@keyframes def-loading {
+
+    0%,
+    40%,
+    100% {
+        transform: scaleY(0.4);
+    }
+
+    20% {
+        transform: scaleY(1);
+    }
+}

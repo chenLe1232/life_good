@@ -1,0 +1,25 @@
+{
+  "version": "3.8",
+  "name": "cocos_learn",
+  "uuid": "cc53a5db-c9ea-4181-bfcf-23aee93d86f7",
+  "creator": {
+    "version": "3.8.4"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.52.0",
+    "@typescript-eslint/parser": "^5.52.0",
+    "eslint": "^8.34.0"
+  },
+  "scripts": {
+    "cli": "npx --registry=https://registry.npmmirror.com @gamex/cc-cli@latest",
+    "upgrade": "npm run cli upgrade 快捷指令:升级框架",
+    "package": "npm run cli package 快捷指令:管理扩展",
+    "app:build": "npm run --prefix ./extensions/app build",
+    "app:watch": "npm run --prefix ./extensions/app watch",
+    "pkg:add": "node ./extensions/pkg add",
+    "pkg:remove": "node ./extensions/pkg remove",
+    "pkg:update": "node ./extensions/pkg update"
+  },
+  "_sourceId": "ab72af5f-29c4-446f-8911-e4a0a6e3b139",
+  "_storeId": "18d16edb932127637ac577e0c2346320"
+}

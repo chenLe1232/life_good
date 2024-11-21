@@ -1,0 +1,39 @@
+<div class="toolbar disabled">
+    <div class="item">
+        <div id="view-select" class="view-select-container" value="Default" tabindex="-1">
+            <div class="view-select">
+                <div class="label">
+                    <span id="name"></span>
+                </div>
+                <i class="arrow-trangle"></i>
+            </div>
+            <div class="options"></div>
+        </div>
+    </div>
+    <div class="item"><button id="btn-rotate" class="">Rotate</button></div>
+    <span style="font-size: small;" class="item">Debug Mode:</span>
+    <div class="item">
+        <select id="opts-debug-mode" value="INFO">
+            <option value="NONE">None</option>
+            <option value="VERBOSE">Verbose</option>
+            <option value="INFO">Info</option>
+            <option value="WARN">Warn</option>
+            <option value="ERROR">Error</option>
+            <option value="INFO_FOR_WEB_PAGE">Info For Web Page</option>
+            <option value="WARN_FOR_WEB_PAGE">Warn For Web Page</option>
+            <option value="ERROR_FOR_WEB_PAGE">Error For Web Page</option>
+        </select>
+    </div>
+    <div class="item"><button id="btn-show-fps" class="checked">Show FPS</button></div>
+    <div class="item">
+        <span style="font-size: small;" class="item">FPS:</span><input id="input-set-fps" type="number" value="60">
+    </div>
+    <div style="margin-right: 0;" class="item"><button id="btn-pause">Pause</button><button id="btn-step">Step</button>
+    </div>
+    <div class="item"><button id="btn-step" style="display: none;">Step</button></div>
+    <div id="step-length">
+        <span>Step Length: </span>
+        <input type="text" value="1">
+        <span>ms</span>
+    </div>
+</div>

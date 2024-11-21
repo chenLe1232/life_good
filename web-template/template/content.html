@@ -1,0 +1,78 @@
+<!-- vue -->
+<div id="app"></div>
+<!-- loading -->
+<div id="def-loading" class="def-loading">
+    <div class="def-loading-content">
+        <div class="def-loading-rect"></div>
+        <div class="def-loading-rect"></div>
+        <div class="def-loading-rect"></div>
+        <div class="def-loading-rect"></div>
+        <div class="def-loading-rect"></div>
+    </div>
+</div>
+<!-- rem -->
+<script>
+    (function (window, document) {
+        var docEl = document.documentElement;
+        var dpr = window.devicePixelRatio || 1;
+
+        // adjust body font size
+        function setBodyFontSize() {
+            if (document.body) {
+                document.body.style.fontSize = (12 * dpr) + 'px';
+            }
+            else {
+                document.addEventListener('DOMContentLoaded', setBodyFontSize);
+            }
+        }
+        setBodyFontSize();
+
+        // set 1rem = viewWidth / 10
+        function setRemUnit(element) {
+            // var rem = Math.min(element.clientWidth, 750) / 10;
+            var rem = element.clientWidth / 10;
+            docEl.style.fontSize = rem + 'px';
+        }
+
+        setRemUnit(docEl);
+
+        if (window.cocosPreview) {
+            // reset rem unit on page resize
+            window.addEventListener('resize', function () {
+                var appEl = document.getElementById('app');
+                var gameEl = appEl?.querySelector('#GameDiv');
+                setRemUnit(gameEl || docEl);
+            })
+            window.addEventListener('pageshow', function (e) {
+                // if (e.persisted) {
+                var appEl = document.getElementById('app');
+                var gameEl = appEl?.querySelector('#GameDiv');
+                setRemUnit(gameEl || docEl);
+                // }
+            })
+        } else {
+            // reset rem unit on page resize
+            window.addEventListener('resize', function () {
+                setRemUnit(docEl);
+            })
+            window.addEventListener('pageshow', function (e) {
+                // if (e.persisted) {
+                setRemUnit(docEl);
+                // }
+            })
+        }
+
+        // detect 0.5px supports
+        if (dpr >= 2) {
+            var fakeBody = document.createElement('body');
+            var testElement = document.createElement('div');
+            testElement.style.border = '.5px solid transparent';
+            fakeBody.appendChild(testElement);
+            docEl.appendChild(fakeBody);
+            if (testElement.offsetHeight === 1) {
+                docEl.classList.add('hairlines');
+            }
+            docEl.removeChild(fakeBody);
+        }
+    })(window, document)
+</script>

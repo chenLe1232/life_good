@@ -1,0 +1,15 @@
+body {
+    overflow: hidden;
+    /* background-color: #4a79dd; */
+}
+
+img {
+    /* 禁止在IOS中对图片进行长按的相关操作(副作用: img将无法响应触摸事件) */
+    pointer-events: none;
+}
+
+#app {
+    /* background: url('../assets/bg.png') no-repeat center center; */
+    width: 100%;
+    margin: 0 auto;
+}
