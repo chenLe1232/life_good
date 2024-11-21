@@ -23,7 +23,7 @@ export const EffectName = SoundManager.EffectName
 
 export type IViewName = "PageCar"|"PageGame"|"PageHome"|"PopOver"|"PopTip"
 export type IViewNames = IViewName[]
-export type IMiniViewName = "PaperGameIndex"|"PaperHomeIndex"
+export type IMiniViewName = "PaperGameIndex"|"PaperHomeDemo"|"PaperHomeIndex"
 export type IMiniViewNames = IMiniViewName[]
 export type IMusicName = "music/home"|"music/over"|"music/war"
 export type IMusicNames = IMusicName[]
